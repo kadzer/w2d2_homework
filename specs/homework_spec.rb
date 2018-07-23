@@ -18,4 +18,13 @@ class TestHomework < MiniTest::Test
     assert_equal("G7", @student.get_cohort())
   end
 
+  def test_set_name()
+    @student.set_name("Robert")
+    assert_equal("Robert", @student.get_name())
+  end
+
+  def test_set_cohort()
+    @student.set_cohort("G6")
+    assert_equal("G6", @student.get_cohort())
+  end
 end

@@ -60,4 +60,9 @@ class TestHomework < MiniTest::Test
     @team.coach = "Zed"
     assert_equal("Zed", @team.coach())
   end
+
+  def test_add_new_player()
+    @team.add_new_player("Mongo")
+    assert_equal(5, @team.players.count())
+  end
 end

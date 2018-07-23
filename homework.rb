@@ -32,7 +32,7 @@ end
 
 class Team
   attr_reader :name, :players
-  attr_accessor :coach
+  attr_accessor :coach, :points
 
   def initialize(name, players, coach, points: 0 )
     @name = name
@@ -59,6 +59,12 @@ class Team
 
   def find_player_name(name)
     return @players.include?(name)
+  end
+
+  def win_or_lose(result)
+    if result = "Win"
+      @points += 1
+    end
   end
 
 end

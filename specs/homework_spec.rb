@@ -67,4 +67,10 @@ class TestHomework < MiniTest::Test
     result = @team.find_player_name("Don")
     assert_equal(true, result)
   end
+
+  def test_win_or_lose()
+    result = @team.win_or_lose("win")
+    assert_equal(1, @team.points)
+  end
+
 end

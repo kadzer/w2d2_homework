@@ -32,4 +32,9 @@ class TestHomework < MiniTest::Test
     result = @student.say("I can talk!")
     assert_equal("I can talk!", result)
   end
+
+  def test_make_student_say_fav_lang()
+    result = @student.say_fav("Ruby")
+    assert_equal("I love Ruby!", result)
+  end
 end

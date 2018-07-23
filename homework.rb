@@ -25,4 +25,7 @@ class Student
     return string
   end
 
+  def say_fav(lang)
+    return "I love #{lang}!"
+  end
 end

@@ -6,6 +6,7 @@ class TestHomework < MiniTest::Test
 
   def setup()
     @student = Student.new("Kaspars", "G7")
+    @team = Team.new("TMNT", ["Leo", "Mike", "Don", "Raph"], "Splinter")
   end
 
   # Testing part A
@@ -36,5 +37,27 @@ class TestHomework < MiniTest::Test
   def test_make_student_say_fav_lang()
     result = @student.say_fav("Ruby")
     assert_equal("I love Ruby!", result)
+  end
+
+  # Testing part B
+
+  def test_get_team_name()
+    result = @team.get_team_name()
+    assert_equal("TMNT", result)
+  end
+
+  def test_get_team_players()
+    result = @team.get_team_players()
+    assert_equal(["Leo", "Mike", "Don", "Raph"], result)
+  end
+
+  def test_get_team_coach()
+    result = @team.get_team_coach()
+    assert_equal("Splinter", result)
+  end
+
+  def test_set_team_coach()
+    result = @team.set_team_coach("Mungo")
+    assert_equal("Mungo", @team.get_team_coach())
   end
 end

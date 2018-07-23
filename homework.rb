@@ -29,3 +29,28 @@ class Student
     return "I love #{lang}!"
   end
 end
+
+class Team
+
+  def initialize(name, players, coach)
+    @name = name
+    @players = players
+    @coach = coach
+  end
+
+  def get_team_name()
+    return @name
+  end
+
+  def get_team_players()
+    return @players
+  end
+
+  def get_team_coach()
+    return @coach
+  end
+
+  def set_team_coach(new_coach)
+    @coach = new_coach
+  end
+end

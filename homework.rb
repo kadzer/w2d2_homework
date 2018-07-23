@@ -34,10 +34,11 @@ class Team
   attr_reader :name, :players
   attr_accessor :coach
 
-  def initialize(name, players, coach)
+  def initialize(name, players, coach, points: 0 )
     @name = name
     @players = players
     @coach = coach
+    @points = points
   end
 
   def get_team_name()
@@ -59,4 +60,5 @@ class Team
   def find_player_name(name)
     return @players.include?(name)
   end
+
 end

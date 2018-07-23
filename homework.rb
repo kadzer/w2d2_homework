@@ -31,6 +31,8 @@ class Student
 end
 
 class Team
+attr_reader :name, :players
+attr_accessor :coach
 
   def initialize(name, players, coach)
     @name = name
@@ -50,7 +52,4 @@ class Team
     return @coach
   end
 
-  def set_team_coach(new_coach)
-    @coach = new_coach
-  end
 end

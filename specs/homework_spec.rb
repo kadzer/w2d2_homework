@@ -42,22 +42,22 @@ class TestHomework < MiniTest::Test
   # Testing part B
 
   def test_get_team_name()
-    result = @team.get_team_name()
+    result = @team.name()
     assert_equal("TMNT", result)
   end
 
   def test_get_team_players()
-    result = @team.get_team_players()
+    result = @team.players()
     assert_equal(["Leo", "Mike", "Don", "Raph"], result)
   end
 
   def test_get_team_coach()
-    result = @team.get_team_coach()
+    result = @team.coach()
     assert_equal("Splinter", result)
   end
 
   def test_set_team_coach()
-    result = @team.set_team_coach("Mungo")
-    assert_equal("Mungo", @team.get_team_coach())
+    @team.coach = "Zed"
+    assert_equal("Zed", @team.coach())
   end
 end

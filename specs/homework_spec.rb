@@ -42,18 +42,15 @@ class TestHomework < MiniTest::Test
   # Testing part B
 
   def test_get_team_name()
-    result = @team.name()
-    assert_equal("TMNT", result)
+    assert_equal("TMNT", @team.name())
   end
 
   def test_get_team_players()
-    result = @team.players()
-    assert_equal(["Leo", "Mike", "Don", "Raph"], result)
+    assert_equal(["Leo", "Mike", "Don", "Raph"], @team.players())
   end
 
   def test_get_team_coach()
-    result = @team.coach()
-    assert_equal("Splinter", result)
+    assert_equal("Splinter", @team.coach())
   end
 
   def test_set_team_coach()
@@ -64,5 +61,10 @@ class TestHomework < MiniTest::Test
   def test_add_new_player()
     @team.add_new_player("Mongo")
     assert_equal(5, @team.players.count())
+  end
+
+  def test_find_player_name()
+    result = @team.find_player_name("Don")
+    assert_equal(true, result)
   end
 end

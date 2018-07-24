@@ -69,7 +69,7 @@ class Team
 end
 
 class Library
-# blank {title:, rental_details:{student_name:, date:}})
+  # blank {title:, rental_details:{student_name:, date:}})
   def initialize(book)
     #book = {title: "", rental_details:{student_name:"", date:""}}
     @book = book
@@ -81,4 +81,12 @@ class Library
   def get_books()
     return @book
   end
+
+  def get_book_by_title(title)
+    if @book_title == title
+      return @book
+    end
+  end
+
+
 end

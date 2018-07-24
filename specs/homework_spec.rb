@@ -5,11 +5,25 @@ require_relative("../homework")
 class TestHomework < MiniTest::Test
 
   def setup()
+    book = {
+      title: "English for toddlers",
+      rental_details: {
+        student_name: "Master Yoda",
+        date: "01/12/18"
+      }
+    }
     @student = Student.new("Kaspars", "G7")
     @team = Team.new("TMNT", ["Leo", "Mike", "Don", "Raph"], "Splinter")
+    @library = Library.new({
+      title: "English for toddlers",
+      rental_details: {
+        student_name: "Master Yoda",
+        date: "01/12/18"
+      }
+      })
   end
 
-  # Testing part A
+  # Part A
 
   def test_name_getter()
     assert_equal("Kaspars", @student.get_name())
@@ -39,7 +53,7 @@ class TestHomework < MiniTest::Test
     assert_equal("I love Ruby!", result)
   end
 
-  # Testing part B
+  # Part B
 
   def test_get_team_name()
     assert_equal("TMNT", @team.name())
@@ -73,4 +87,17 @@ class TestHomework < MiniTest::Test
     assert_equal(1, @team.points)
   end
 
-end
+  # extension
+
+  def test_book_getter()
+    assert_equal({
+      title: "English for toddlers",
+      rental_details: {
+        student_name: "Master Yoda",
+        date: "01/12/18"
+      }
+      }, @library.get_books())
+
+    end
+
+  end

@@ -62,9 +62,23 @@ class Team
   end
 
   def win_or_lose(result)
-    if result = "Win"
+    if result == "win"
       @points += 1
     end
   end
+end
 
+class Library
+# blank {title:, rental_details:{student_name:, date:}})
+  def initialize(book)
+    #book = {title: "", rental_details:{student_name:"", date:""}}
+    @book = book
+    @book_title = book[:title]
+    @student_name = book[:rental_details][:student_name]
+    @rental_date = book[:rental_details][:date]
+  end
+
+  def get_books()
+    return @book
+  end
 end
